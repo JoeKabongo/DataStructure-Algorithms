@@ -1,4 +1,8 @@
+from . import Node
+
 # Algorithm to find kth element of a singly linkedlist
+
+
 def kthToLast(head, k):
     if k < 1:
         return None
