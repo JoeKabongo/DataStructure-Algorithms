@@ -1,5 +1,3 @@
-
-
 class Node:
     def __init__(self, aValue):
         self.val = aValue
@@ -53,6 +51,35 @@ def add_interative(head1, head2):
     return dummy.next
 
 
+def add_followup(l1, l2):
+    stack1 = getStack(l1)
+    stack2 = getStack(l2)
+    current = None
+    carry = 0
+
+    while stack1 or stack2 or carry:
+        s = carry
+        if stack1:
+            s += stack1.pop().val
+        if stack2:
+            s += stack2.pop().val
+
+        new_node = Node(s % 10)
+        new_node.next = current
+        current = new_node
+        carry = 0 if s < 10 else 1
+
+    return current
+
+
+def getStack(node):
+    output = []
+    while node:
+        output.append(node)
+        node = node.next
+    return output
+
+
 def display(node):
     while node:
         print(f"{node.val} -> ", end="")
@@ -74,4 +101,4 @@ def constructNode(array):
 
 head1 = constructNode([9, 7, 8])
 head2 = constructNode([6, 8, 5])
-display(add_interative(head1, head2))
+display(add_followup(head1, head2))
