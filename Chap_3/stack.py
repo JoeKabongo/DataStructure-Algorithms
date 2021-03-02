@@ -1,5 +1,4 @@
 class EmptyStack(Exception):
-    """ A wrapper exception to hide implementation details """
     pass
 
 
