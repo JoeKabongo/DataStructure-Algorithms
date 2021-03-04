@@ -1,4 +1,4 @@
-def zeroMatrixSpace(matrix):
+def zero_matrix_space(matrix):
     N = len(matrix)
     M = len(matrix[0])
 
@@ -22,7 +22,7 @@ def zeroMatrixSpace(matrix):
                 matrix[row][col] = 0
 
 
-def zeroMatrixNoSpace(matrix):
+def zero_matrix_space(matrix):
     N = len(matrix)
     M = len(matrix[0])
 

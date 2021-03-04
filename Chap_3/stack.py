@@ -12,7 +12,7 @@ class Stack:
         self.top = None
 
     def pop(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise EmptyStack("Empty stack cannot be popped")
 
         item = self.top.val
@@ -25,9 +25,9 @@ class Stack:
         self.top = new_item
 
     def peek(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise EmptyStack("Empty stack cannot be peeked")
         return self.top.val
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.top is None

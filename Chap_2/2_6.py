@@ -1,4 +1,4 @@
-def isPalidrome(head):
+def is_palidrome(head):
     """ Return either head is a palidrom or not"""
     if head is None or head.next is None:
         return True
@@ -39,7 +39,7 @@ def reverse(node):
     return prev
 
 
-def isPalindrome(head: ListNode) -> bool:
+def is_palindrome2(head: ListNode) -> bool:
     """This time using a stack"""
     if head is None or head.next is None:
         return True

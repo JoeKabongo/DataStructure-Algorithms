@@ -22,7 +22,7 @@ class Queue:
             self.first = self.last
 
     def remove(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise EmptyQueue("Queue is Empty!")
 
         item = self.first.val
@@ -33,9 +33,9 @@ class Queue:
         return item
 
     def peek(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise EmptyQueue("Queue is Empty!")
         return self.first.val
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.first is None

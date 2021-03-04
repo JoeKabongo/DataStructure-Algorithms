@@ -1,4 +1,4 @@
-def rotateMatrix(matrix):
+def rotate_matrix(matrix):
     N = len(matrix)
     for i in range(N):
         for j in range(i+1, N):

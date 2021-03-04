@@ -2,7 +2,7 @@ from . import Node
 
 
 # removing duplicate from an unsorted LinkedList
-def removeDuplicate(head):
+def remove_duplicate(head):
     if head is None:
         return
 
@@ -19,7 +19,7 @@ def removeDuplicate(head):
 
 
 # remove duplicate without using space
-def removeDuplicateNospace(head):
+def remove_duplicate_2(head):
     if head is None:
         return head
 

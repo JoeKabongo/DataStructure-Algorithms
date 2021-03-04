@@ -52,8 +52,8 @@ def add_interative(head1, head2):
 
 
 def add_followup(l1, l2):
-    stack1 = getStack(l1)
-    stack2 = getStack(l2)
+    stack1 = get_stack(l1)
+    stack2 = get_stack(l2)
     current = None
     carry = 0
 
@@ -72,7 +72,7 @@ def add_followup(l1, l2):
     return current
 
 
-def getStack(node):
+def get_stack(node):
     output = []
     while node:
         output.append(node)

@@ -9,12 +9,12 @@ def is_unique(string):
     return True
 
 
-def is_unique_nospace(string):
+def is_unique2(string):
     N = len(string)
     for i in range(N):
         char = string[i]
         for j in range(i+1, N):
             if char == string[j]:
                 return False
-    
+
     return True

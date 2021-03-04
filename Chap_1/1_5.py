@@ -1,5 +1,5 @@
 # Given two strings S and T, determine if they are both one edit distance apart.
-def oneAway(s1, s2):
+def one_away(s1, s2):
     if abs(len(s1) - len(s2)) > 1:
         return False
 
