@@ -23,5 +23,3 @@ x.push(34)
 x.push(1)
 
 sort_stack(x)
-while not x.is_empty():
-    print(x.pop())
