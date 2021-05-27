@@ -1,7 +1,6 @@
 class Node:
-    def __init__(self, key, value):
+    def __init__(self, key):
         self.key = key
-        self.value = value
         self.left = None
         self.right = None
 
@@ -10,10 +9,10 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
 
-    def insert_iterative(self, key, value):
-        """ Insert key and value iteratavely """
+    def insert_iterative(self, key):
+        """ Insert key iteratavely """
         if self.root is None:
-            self.root = Node(key, value)
+            self.root = Node(key)
 
         prev = None
         node = self.root
@@ -25,30 +24,29 @@ class BinarySearchTree:
             elif node.key > key:
                 node = node.left
             else:  # key was already in the BST, just update the value
-                node.value = value
                 return
 
         if prev.key < key:
-            prev.right = Node(key, value)
+            prev.right = Node(key)
         else:
-            prev.left = Node(key, value)
+            prev.left = Node(key)
 
-    def insert_recursive(self, key, value):
-        """ insert new key and value recusrively """
-        self.root = self.recursive_helper(self.root, key, value)
+    def insert_recursive(self, key):
+        """ insert new key """
+        self.root = self.recursive_helper(self.root, key)
 
     def recursive_helper(self, node, key, value):
         if node is None:
-            return Node(key, value)
+            return Node(key)
 
         if node.key < key:
-            node.right = self.recursive_helper(node.right, key, value)
+            node.right = self.recursive_helper(node.right, key)
 
         elif node.key > key:
-            node.left = self.recursive_helper(node.left, key, value)
+            node.left = self.recursive_helper(node.left, key)
 
         else:  # key was already in the BST, just update the value
-            node.value = value
+            return node
 
         return node
 

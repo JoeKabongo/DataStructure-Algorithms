@@ -8,11 +8,14 @@ class Edge:
         self.weight = weight
 
 
-class WeightedGraph:
-    """ Undirected graph"""
+class Graph:
+    """ Undirected weighed graph"""
 
     def __init__(self):
         self.adj = {}
+
+    def get_adjency_list(self):
+        return self.adj.copy()
 
     def add_edge(self, source, destination, weight):
         """Add edge to graph"""
@@ -49,7 +52,7 @@ class WeightedGraph:
         helper(start, set())
 
 
-x = WeightedGraph()
+x = Graph()
 x.add_edge(1, 2, 10)
 x.add_edge(1, 5, 1)
 x.add_edge(2, 5, 3)
