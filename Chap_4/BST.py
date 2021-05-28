@@ -1,4 +1,4 @@
-class Node:
+class TreeNode:
     def __init__(self, key):
         self.key = key
         self.left = None
@@ -12,7 +12,7 @@ class BinarySearchTree:
     def insert_iterative(self, key):
         """ Insert key iteratavely """
         if self.root is None:
-            self.root = Node(key)
+            self.root = TreeNode(key)
 
         prev = None
         node = self.root
@@ -27,9 +27,9 @@ class BinarySearchTree:
                 return
 
         if prev.key < key:
-            prev.right = Node(key)
+            prev.right = TreeNode(key)
         else:
-            prev.left = Node(key)
+            prev.left = TreeNode(key)
 
     def insert_recursive(self, key):
         """ insert new key """
@@ -37,7 +37,7 @@ class BinarySearchTree:
 
     def recursive_helper(self, node, key, value):
         if node is None:
-            return Node(key)
+            return TreeNode(key)
 
         if node.key < key:
             node.right = self.recursive_helper(node.right, key)

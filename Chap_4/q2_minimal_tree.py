@@ -1,4 +1,4 @@
-from BST import Node
+from BST import TreeNode
 from collections import deque
 
 
@@ -16,14 +16,14 @@ def helper(A, start, end):
     if start > end:
         return None
     middle = (start + end)//2
-    x = Node(A[middle])
+    x = TreeNode(A[middle])
     x.left = helper(A, start, middle - 1)
     x.right = helper(A, middle + 1, end)
 
     return x
 
 
-def level(node: Node):
+def level(node: TreeNode):
     queue = deque()
     queue.append(node)
     while len(queue) > 0:
@@ -39,5 +39,10 @@ def level(node: Node):
         print(" ")
 
 
-x = minimal_tree([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
-level(x)
+def main():
+    x = minimal_tree([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+    level(x)
+
+
+if __name__ == "__main__":
+    main()
